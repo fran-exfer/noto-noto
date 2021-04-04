@@ -1,5 +1,11 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Nav from './components/Nav';
 
 export default function App() {
-  return <h1 className="text-2xl">Hello World!</h1>;
+  return (
+    <Router>
+      <Nav />
+    </Router>
+  );
 }
