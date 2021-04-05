@@ -12,7 +12,7 @@ export default function NoteList({ notes }) {
       </section>
       <section className="bg-gray-100 | flex-1 | p-8 pt-0 | flex flex-wrap content-start">
         {notes.map((note) => (
-          <Note note={note} />
+          <Note key={note.id} note={note} />
         ))}
       </section>
     </>
