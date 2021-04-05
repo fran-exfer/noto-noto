@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 
-export default function NoteModal({ notes }) {
+export default function NoteModal({ notes, handleSave }) {
   const history = useHistory();
   const { id } = useParams();
 
@@ -14,7 +14,7 @@ export default function NoteModal({ notes }) {
   useEffect(() => {
     if (!id) return;
 
-    const selected = notes.find((note) => note.id === id);
+    const selected = notes.find((note) => note.id === Number(id));
 
     // Id doesn't exist: go to index! Prevents manual urls.
     if (!selected) {
@@ -25,10 +25,6 @@ export default function NoteModal({ notes }) {
     titleInput.current.value = selected.title;
     contentTextarea.current.value = selected.content;
   }, [id, history, notes]);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
 
   return (
     <div className="fixed left-0 top-0 w-full h-full overflow-y-scroll | bg-black bg-opacity-50 | flex justify-center items-center">
@@ -41,7 +37,19 @@ export default function NoteModal({ notes }) {
             &times;
           </button>
         </div>
-        <form onSubmit={handleSubmit}>
+        <form
+          onSubmit={(e) =>
+            handleSave(
+              e,
+              id,
+              {
+                title: titleInput.current.value,
+                content: contentTextarea.current.value,
+              },
+              history
+            )
+          }
+        >
           <input
             type="text"
             placeholder="Note title..."
@@ -62,7 +70,7 @@ export default function NoteModal({ notes }) {
               value="Save note"
               className="btn btn-primary"
             />
-            <button className="btn btn-delete">Delete</button>
+            {id && <button className="btn btn-delete">Delete</button>}
           </div>
         </form>
       </article>
