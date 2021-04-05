@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Nav from './components/Nav';
 import NoteList from './components/NoteList';
 import NoteModal from './components/NoteModal';
 
 export default function App() {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(() => {
+    const storage = window.localStorage.getItem('NotoNoto_notes');
+    return storage === null ? [] : JSON.parse(storage);
+  });
+
+  // Save data to local storage when state changes
+  useEffect(() => {
+    window.localStorage.setItem('NotoNoto_notes', JSON.stringify(notes));
+  }, [notes]);
 
   const handleSave = (e, id, data, history) => {
     e.preventDefault();
