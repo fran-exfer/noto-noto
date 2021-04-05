@@ -31,7 +31,7 @@ export default function App() {
         <Nav />
         <Route path="/" component={() => <NoteList notes={notes} />} />
         <Route
-          path={['/note', '/note/:id']}
+          path={['/note/:id', '/note']}
           component={() => <NoteModal notes={notes} />}
         />
       </Router>

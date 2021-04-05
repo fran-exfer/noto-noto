@@ -1,8 +1,30 @@
-import React from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useEffect, useRef } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
 
-export default function NoteModal() {
+export default function NoteModal({ notes }) {
   const history = useHistory();
+  const { id } = useParams();
+
+  const titleInput = useRef('');
+  const contentTextarea = useRef('');
+
+  /*
+    If there's a note id in the url, we will fill up the form.
+  */
+  useEffect(() => {
+    if (!id) return;
+
+    const selected = notes.find((note) => note.id === id);
+
+    // Id doesn't exist: go to index! Prevents manual urls.
+    if (!selected) {
+      history.push('/');
+      return;
+    }
+
+    titleInput.current.value = selected.title;
+    contentTextarea.current.value = selected.content;
+  }, [id, history, notes]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,11 +47,13 @@ export default function NoteModal() {
             placeholder="Note title..."
             className="text-xl w-full pl-1 pr-1 pt-2 pb-2 mb-4 | border-b-2 focus:border-blue-400"
             required
+            ref={titleInput}
           />
           <textarea
             placeholder="Note content..."
             className="w-full p-2 mb-4 | border-l-2 focus:border-blue-400"
             required
+            ref={contentTextarea}
           ></textarea>
           <div className="flex justify-between">
             <input
