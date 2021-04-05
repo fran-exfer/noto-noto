@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Nav from './components/Nav';
 import NoteList from './components/NoteList';
+import NoteModal from './components/NoteModal';
 
 export default function App() {
   const [notes, setNotes] = useState([
@@ -28,7 +29,8 @@ export default function App() {
     <main className="flex flex-col h-screen">
       <Router>
         <Nav />
-        <NoteList notes={notes} />
+        <Route path="/" component={() => <NoteList notes={notes} />} />
+        <Route path="/note" component={NoteModal} />
       </Router>
     </main>
   );
