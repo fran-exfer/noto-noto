@@ -5,25 +5,7 @@ import NoteList from './components/NoteList';
 import NoteModal from './components/NoteModal';
 
 export default function App() {
-  const [notes, setNotes] = useState([
-    {
-      id: 224,
-      title: 'Test note #0',
-      content: 'This is a short note.',
-    },
-    {
-      id: 1234,
-      title: 'Test note #1',
-      content:
-        "This is a longer note, but it's still a short-ish one. Test testing testus tested. We're testing our note. We're definitely testing our note here.",
-    },
-    {
-      id: 3442,
-      title: 'Test note #2',
-      content:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex eum quis molestiae dolores, minima ipsum sint voluptatibus eos odio sunt quae possimus quasi itaque inventore saepe, voluptatum dolorum consequatur hic? Ex eum quis molestiae dolores, minima ipsum sint voluptatibus eos odio sunt.',
-    },
-  ]);
+  const [notes, setNotes] = useState([]);
 
   const handleSave = (e, id, data, history) => {
     e.preventDefault();
