@@ -50,6 +50,7 @@ export default function NoteModal({ notes }) {
             ref={titleInput}
           />
           <textarea
+            rows="10"
             placeholder="Note content..."
             className="w-full p-2 mb-4 | border-l-2 focus:border-blue-400"
             required
