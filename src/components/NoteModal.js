@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 
-export default function NoteModal({ notes, handleSave }) {
+export default function NoteModal({ notes, handleSave, handleDelete }) {
   const history = useHistory();
   const { id } = useParams();
 
@@ -70,7 +70,14 @@ export default function NoteModal({ notes, handleSave }) {
               value="Save note"
               className="btn btn-primary"
             />
-            {id && <button className="btn btn-delete">Delete</button>}
+            {id && (
+              <button
+                className="btn btn-delete"
+                onClick={(e) => handleDelete(e, id, history)}
+              >
+                Delete
+              </button>
+            )}
           </div>
         </form>
       </article>

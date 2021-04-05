@@ -53,6 +53,13 @@ export default function App() {
     history.push('/');
   };
 
+  const handleDelete = (e, id, history) => {
+    setNotes(notes.filter((note) => note.id !== Number(id)));
+
+    // Go back to default route
+    history.push('/');
+  };
+
   return (
     <main className="flex flex-col h-screen">
       <Router>
@@ -60,7 +67,13 @@ export default function App() {
         <Route path="/" component={() => <NoteList notes={notes} />} />
         <Route
           path={['/note/:id', '/note']}
-          component={() => <NoteModal notes={notes} handleSave={handleSave} />}
+          component={() => (
+            <NoteModal
+              notes={notes}
+              handleSave={handleSave}
+              handleDelete={handleDelete}
+            />
+          )}
         />
       </Router>
     </main>
