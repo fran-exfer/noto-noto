@@ -10,10 +10,16 @@ export default function App() {
     return storage === null ? [] : JSON.parse(storage);
   });
 
+  const [theme, setTheme] = useState(() => {
+    const storage = window.localStorage.getItem('NotoNoto_theme');
+    return storage === null ? 'light' : storage;
+  });
+
   // Save data to local storage when state changes
   useEffect(() => {
     window.localStorage.setItem('NotoNoto_notes', JSON.stringify(notes));
-  }, [notes]);
+    window.localStorage.setItem('NotoNoto_theme', theme);
+  }, [notes, theme]);
 
   const handleSave = (e, id, data, history) => {
     e.preventDefault();
@@ -50,11 +56,18 @@ export default function App() {
     history.push('/');
   };
 
+  const handleToggleTheme = () => {
+    setTheme((theme) => (theme === 'light' ? 'dark' : 'light'));
+  };
+
   return (
     <main className="flex flex-col h-screen">
       <Router>
-        <Nav />
-        <Route path="/" component={() => <NoteList notes={notes} />} />
+        <Nav theme={theme} handleToggleTheme={handleToggleTheme} />
+        <Route
+          path="/"
+          component={() => <NoteList notes={notes} theme={theme} />}
+        />
         <Route
           path={['/note/:id', '/note']}
           component={() => (
@@ -62,6 +75,7 @@ export default function App() {
               notes={notes}
               handleSave={handleSave}
               handleDelete={handleDelete}
+              theme={theme}
             />
           )}
         />
