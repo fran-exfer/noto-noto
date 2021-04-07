@@ -1,0 +1,11 @@
+.note-list {
+  display: flex;
+  flex-direction: column;
+
+  &__controls {
+    display: flex;
+  }
+
+  &__notes {
+  }
+}

@@ -21,3 +21,20 @@ h6 {
   font-size: inherit;
   font-weight: inherit;
 }
+
+// Reset inputs and buttons styling
+input,
+button {
+  padding: 0;
+  border: 0;
+
+  background-color: transparent;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+button {
+  cursor: pointer;
+}

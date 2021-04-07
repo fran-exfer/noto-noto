@@ -1,0 +1,40 @@
+.btn {
+  padding: 1rem 2rem;
+  border-radius: var(--rad-m);
+  box-shadow: var(--shadow-m);
+  color: var(--color-text-lighter);
+
+  transition: 0.2s all;
+
+  &--primary {
+    background-color: var(--color-primary);
+
+    &:hover {
+      background-color: var(--color-primary-light);
+    }
+
+    &:active {
+      background-color: var(--color-primary-dark);
+    }
+
+    &:focus {
+      box-shadow: var(--shadow-m), 0 0 0 2px var(--color-primary-dark);
+    }
+  }
+
+  &--danger {
+    background-color: var(--color-danger);
+
+    &:hover {
+      background-color: var(--color-danger-light);
+    }
+
+    &:active {
+      background-color: var(--color-danger-dark);
+    }
+
+    &:focus {
+      box-shadow: var(--shadow-m), 0 0 0 2px var(--color-danger-dark);
+    }
+  }
+}

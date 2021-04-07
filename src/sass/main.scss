@@ -1,26 +1,28 @@
 /*
-  Sass main file. Only imports sass partials.
-
-  Due to the size of the application, I've decided to implement a really simple
-  architecture here:
-
-  - variables: self-explanatory.
-  - base: Html and body tag styles, global typography...
-  - ui/*: UI elements which are NOT unique to a React component (buttons, etc.)
-  - components/*: React components.
-
-  In a more complex SASS architecture, many sources recommend a components folder
-  for all your reusable bits, including buttons. But because there's a clear difference
-  between a IMPLICIT reusable HTML element (generic buttons, generic inputs...) and an
-  EXPLICIT React component, I've decided to do it this way.
-
-  I've also decided NOT to use a 'layout' folder for layout styling. Again, React is
-  organized in a per component basis. Better stick to that mindset.
-*/
+ * Sass main file. Only imports sass partials.
+ *
+ * Due to the size of the application, I've decided to implement a really simple
+ * architecture here:
+ *
+ * - variables: self-explanatory.
+ * - base: Html and body tag styles, global typography...
+ * - ui/*: UI elements which are NOT unique to a React component (buttons, etc.)
+ * - components/*: React components.
+ *
+ * In a more complex SASS architecture, many sources recommend a components folder
+ * for all your reusable bits, including buttons. But because there's a clear difference
+ * between a IMPLICIT reusable HTML element (generic buttons, generic inputs...) and an
+ * EXPLICIT React component, I've decided to do it this way.
+ *
+ * I've also decided NOT to use a 'layout' folder for layout styling. Again, React is
+ * organized in a per component basis. Better stick to that mindset.
+ */
 
 @use 'variables';
 @use 'base';
 
 @use 'ui/buttons';
 
-@use 'components/nav';
+@use 'components/app';
+@use 'components/navbar';
+@use 'components/note-list';

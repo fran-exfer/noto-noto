@@ -1,15 +1,43 @@
 /*
-  CSS has a native solution for variables: custom properties. So I'll be using
-  those instead of SASS variables for most of the things.
-*/
+ * CSS has a native solution for variables: custom properties. So I'll be using
+ * those instead of SASS variables for most of the things.
+ */
 :root {
-  // Typography
+  /*
+   * Typography
+   */
   --font-primary: 'Open Sans', sans-serif;
-  --font-size-m: 1.6rem;
+
+  --font-size-m: 1.5rem;
   --font-size-l: 2rem;
   --font-size-xl: 2.4rem;
 
-  // Colors
+  /*
+   * Colors
+   */
   --color-primary: #3b82f6;
-  --color-text-primary: #fff;
+  --color-primary-light: #60a5fa;
+  --color-primary-dark: #1d4ed8;
+
+  --color-danger: #ef4444;
+  --color-danger-light: #f87171;
+  --color-danger-dark: #b91c1c;
+
+  --color-bg-light: #f3f4f6;
+  --color-bg-dark: #111827;
+
+  --color-text-light: #eee;
+  --color-text-lighter: #fff;
+  --color-text-dark: #111827;
+
+  /*
+   * Shadows
+   */
+  --shadow-m: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+  /*
+   *  Border radiuses
+   */
+  --rad-m: 1rem;
+  --rad-circle: 50%;
 }

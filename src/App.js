@@ -10,16 +10,27 @@ import NoteList from './components/NoteList';
 export default function App() {
   // We'll use a reducer to centralize and abstract state-modifying actions.
 
-  // We'll use React Context API to provide this reducer logic to all components
-  // that need it.
+  /*
+   * We'll use React Context API to provide this reducer logic to all components
+   * that need it.
+   */
   const centralState = useReducer(notoReducer, { notes: [], theme: 'light' });
+  const [state] = centralState;
 
+  /*
+   * Theming is done by appending the theme value from the state as a CSS
+   * class. This way, if the theme is 'light', className for the app would
+   * be 'app light'. Not implemented as a BEM modifier (app--light) for
+   * JS code clarity.
+   */
   return (
     <NotoContext.Provider value={centralState}>
-      <main class="app">
+      <main className={`app ${state.theme}`}>
         <Router>
           <Navbar />
-          <Route path="/" component={() => <NoteList />} />
+          <div class="app__content">
+            <Route path="/" component={NoteList} />
+          </div>
         </Router>
       </main>
     </NotoContext.Provider>
