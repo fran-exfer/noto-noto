@@ -42,6 +42,18 @@ export default function NoteModal() {
   };
 
   /*
+   * Deleting a note
+   */
+  const deleteNote = (e) => {
+    e.preventDefault();
+    dispatch({
+      type: 'deleteNote',
+      id: Number(id),
+    });
+    history.push('/');
+  };
+
+  /*
    * UI
    */
   return (
@@ -72,10 +84,7 @@ export default function NoteModal() {
               className="btn btn--primary"
             />
             {id && (
-              <button
-                className="btn btn--danger"
-                onClick={(e) => e.preventDefault}
-              >
+              <button className="btn btn--danger" onClick={deleteNote}>
                 Delete
               </button>
             )}

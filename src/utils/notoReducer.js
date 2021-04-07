@@ -37,6 +37,15 @@ export default function notoReducer(state, action) {
       }
 
     /*
+     * Deleting notes
+     */
+    case 'deleteNote':
+      return {
+        ...state,
+        notes: state.notes.filter((note) => note.id !== action.id),
+      };
+
+    /*
      * Toggling between light/dark themes
      */
     case 'toggleTheme':
