@@ -8,6 +8,37 @@
 
 export default function notoReducer(state, action) {
   switch (action.type) {
+    /*
+     * Creating/Updating notes
+     */
+    case 'saveNote':
+      if (action.id) {
+        // Updating a note
+        const noteIndex = state.notes.findIndex(
+          (note) => note.id === action.id
+        );
+        return {
+          ...state,
+          notes: [
+            ...state.notes.slice(0, noteIndex),
+            { id: action.id, title: action.title, content: action.content },
+            ...state.notes.slice(noteIndex + 1),
+          ],
+        };
+      } else {
+        // Creating a note
+        return {
+          ...state,
+          notes: [
+            ...state.notes,
+            { id: Date.now(), title: action.title, content: action.content },
+          ],
+        };
+      }
+
+    /*
+     * Toggling between light/dark themes
+     */
     case 'toggleTheme':
       return {
         ...state,

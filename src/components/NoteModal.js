@@ -4,7 +4,7 @@ import { Link, useHistory, useParams } from 'react-router-dom';
 import NotoContext from '../utils/NotoContext';
 
 export default function NoteModal() {
-  const [state] = useContext(NotoContext);
+  const [state, dispatch] = useContext(NotoContext);
   const history = useHistory();
   const { id } = useParams();
 
@@ -27,13 +27,30 @@ export default function NoteModal() {
     contentTextarea.current.value = selected.content;
   }, [id, history, state.notes]);
 
+  /*
+   * Creating/Updating a note
+   */
+  const saveNote = (e) => {
+    e.preventDefault();
+    dispatch({
+      type: 'saveNote',
+      id: Number(id),
+      title: titleInput.current.value,
+      content: contentTextarea.current.value,
+    });
+    history.push('/');
+  };
+
+  /*
+   * UI
+   */
   return (
     <div className="note-modal">
       <article className={`note-modal__content ${state.theme}`}>
         <Link to="/" className="note-modal__close">
           &times;
         </Link>
-        <form onSubmit={(e) => e.preventDefault()}>
+        <form onSubmit={saveNote}>
           <input
             required
             type="text"
