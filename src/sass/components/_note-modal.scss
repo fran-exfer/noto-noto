@@ -40,7 +40,7 @@
 
     &:hover,
     &:active {
-      color: var(--color-primary);
+      color: var(--color-primary-light);
     }
   }
 
@@ -50,7 +50,7 @@
     margin-bottom: 1rem;
 
     &:focus {
-      border-color: var(--color-primary);
+      border-color: var(--color-primary-light);
     }
   }
 
