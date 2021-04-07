@@ -1,0 +1,23 @@
+// Google Fonts import
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+html {
+  font-size: 62.5%; // 1rem === 10px on default font settings
+}
+
+body {
+  font-size: var(--font-size-m);
+  font-family: var(--font-primary);
+}
+
+// Reset headings margin and typography settings for consistency
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}

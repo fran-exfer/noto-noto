@@ -1,0 +1,15 @@
+/*
+  CSS has a native solution for variables: custom properties. So I'll be using
+  those instead of SASS variables for most of the things.
+*/
+:root {
+  // Typography
+  --font-primary: 'Open Sans', sans-serif;
+  --font-size-m: 1.6rem;
+  --font-size-l: 2rem;
+  --font-size-xl: 2.4rem;
+
+  // Colors
+  --color-primary: #3b82f6;
+  --color-text-primary: #fff;
+}
