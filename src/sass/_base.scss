@@ -38,10 +38,12 @@ a {
 
 // Reset inputs and buttons styling
 input,
-button {
+button,
+textarea {
   border: 0;
 
   background-color: transparent;
+  color: inherit;
   font-size: inherit;
   font-family: inherit;
 
@@ -52,4 +54,20 @@ button {
 
 button {
   cursor: pointer;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--color-text-placeholder);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--color-text-placeholder);
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: var(--color-text-placeholder);
 }

@@ -6,6 +6,7 @@ import NotoContext from './utils/NotoContext';
 
 import Navbar from './components/Navbar';
 import NoteList from './components/NoteList';
+import NoteModal from './components/NoteModal';
 
 export default function App() {
   // We'll use a reducer to centralize and abstract state-modifying actions.
@@ -33,9 +34,10 @@ export default function App() {
       <main className={`app ${state.theme}`}>
         <Router>
           <Navbar />
-          <div class="app__content">
+          <div className="app__content">
             <Route path="/" component={NoteList} />
           </div>
+          <Route path={['/note/:id', '/note']} component={NoteModal} />
         </Router>
       </main>
     </NotoContext.Provider>
