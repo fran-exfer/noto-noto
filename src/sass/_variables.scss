@@ -9,8 +9,10 @@
   --font-primary: 'Open Sans', sans-serif;
 
   --font-size-m: 1.5rem;
-  --font-size-l: 2rem;
+  --font-size-l: 1.8rem;
   --font-size-xl: 2.4rem;
+
+  --font-weight-semibold: 600;
 
   /*
    * Colors
@@ -25,6 +27,12 @@
 
   --color-bg-light: #f3f4f6;
   --color-bg-dark: #111827;
+
+  --color-note-light: #fff;
+  --color-note-light-hover: #eff6ff;
+  --color-note-border-light: #e5e7eb;
+  --color-note-dark: #1f2937;
+  --color-note-dark-hover: #374151;
 
   --color-text-light: #eee;
   --color-text-lighter: #fff;

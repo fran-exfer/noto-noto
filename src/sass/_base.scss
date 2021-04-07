@@ -1,8 +1,18 @@
 // Google Fonts import
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+// Reset margins and paddings, box-sizing
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
 
 html {
   font-size: 62.5%; // 1rem === 10px on default font settings
+  box-sizing: border-box;
 }
 
 body {
@@ -10,25 +20,30 @@ body {
   font-family: var(--font-primary);
 }
 
-// Reset headings margin and typography settings for consistency
+// Reset headings typography settings for consistency
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  margin: 0;
   font-size: inherit;
   font-weight: inherit;
+}
+
+// Reset anchor tags underline to style them somewhere else
+a {
+  text-decoration: none;
 }
 
 // Reset inputs and buttons styling
 input,
 button {
-  padding: 0;
   border: 0;
 
   background-color: transparent;
+  font-size: inherit;
+  font-family: inherit;
 
   &:focus {
     outline: 0;

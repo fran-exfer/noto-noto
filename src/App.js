@@ -14,7 +14,12 @@ export default function App() {
    * We'll use React Context API to provide this reducer logic to all components
    * that need it.
    */
-  const centralState = useReducer(notoReducer, { notes: [], theme: 'light' });
+  const centralState = useReducer(notoReducer, {
+    notes: [
+      { id: 2342424, title: 'Test note', content: 'Test content blabla' },
+    ],
+    theme: 'light',
+  });
   const [state] = centralState;
 
   /*

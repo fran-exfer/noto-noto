@@ -1,0 +1,37 @@
+.note {
+  width: 100%;
+  max-width: 32rem;
+  max-height: 24rem;
+
+  padding: 2rem;
+  border-radius: var(--rad-m);
+  box-shadow: var(--shadow-m);
+
+  transition: all 0.2s;
+
+  &.light {
+    background-color: var(--color-note-light);
+    border: 1px solid var(--color-note-border-light);
+    color: var(--color-text-dark);
+
+    &:hover {
+      background-color: var(--color-note-light-hover);
+    }
+  }
+
+  &.dark {
+    background-color: var(--color-note-dark);
+    border: 1px solid var(--color-note-dark-hover);
+    color: var(--color-text-light);
+
+    &:hover {
+      background-color: var(--color-note-dark-hover);
+    }
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-semibold);
+  }
+}
