@@ -37,3 +37,10 @@
     font-weight: var(--font-weight-semibold);
   }
 }
+
+@media screen and (max-width: 780px) {
+  .note {
+    max-width: 100%;
+    margin-right: 0;
+  }
+}
