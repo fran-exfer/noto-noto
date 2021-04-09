@@ -12,22 +12,22 @@
   transition: all 0.2s;
 
   &.light {
-    background-color: var(--color-note-light);
-    border: 1px solid var(--color-note-border-light);
-    color: var(--color-text-dark);
+    background-color: #fff;
+    border: 1px solid var(--c-gray-200);
+    color: var(--c-gray-900);
 
     &:hover {
-      background-color: var(--color-note-light-hover);
+      background-color: var(--c-primary-50);
     }
   }
 
   &.dark {
-    background-color: var(--color-note-dark);
-    border: 1px solid var(--color-note-dark-hover);
+    background-color: var(--c-gray-800);
+    border: 1px solid var(--c-gray-700);
     color: var(--color-text-light);
 
     &:hover {
-      background-color: var(--color-note-dark-hover);
+      background-color: var(--c-gray-700);
     }
   }
 

@@ -11,12 +11,12 @@
   }
 
   &.light {
-    background-color: var(--color-bg-light);
-    color: var(--color-text-dark);
+    background-color: var(--c-gray-100);
+    color: var(--c-gray-900);
   }
 
   &.dark {
-    background-color: var(--color-bg-dark);
-    color: var(--color-text-light);
+    background-color: var(--c-gray-900);
+    color: var(--c-gray-100);
   }
 }

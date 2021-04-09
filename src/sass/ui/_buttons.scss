@@ -2,39 +2,39 @@
   padding: 1rem 2rem;
   border-radius: var(--rad-m);
   box-shadow: var(--shadow-m);
-  color: var(--color-text-lighter);
+  color: #fff;
 
   transition: 0.2s all;
 
   &--primary {
-    background-color: var(--color-primary);
+    background-color: var(--c-primary-500);
 
     &:hover {
-      background-color: var(--color-primary-light);
+      background-color: var(--c-primary-400);
     }
 
     &:active {
-      background-color: var(--color-primary-dark);
+      background-color: var(--c-primary-700);
     }
 
     &:focus {
-      box-shadow: var(--shadow-m), 0 0 0 2px var(--color-primary-dark);
+      box-shadow: var(--shadow-m), 0 0 0 2px var(--c-primary-700);
     }
   }
 
   &--danger {
-    background-color: var(--color-danger);
+    background-color: var(--c-danger-500);
 
     &:hover {
-      background-color: var(--color-danger-light);
+      background-color: var(--c-danger-400);
     }
 
     &:active {
-      background-color: var(--color-danger-dark);
+      background-color: var(--c-danger-700);
     }
 
     &:focus {
-      box-shadow: var(--shadow-m), 0 0 0 2px var(--color-danger-dark);
+      box-shadow: var(--shadow-m), 0 0 0 2px var(--c-danger-700);
     }
   }
 }
